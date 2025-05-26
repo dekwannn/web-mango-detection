@@ -4,6 +4,8 @@ from PIL import Image
 import os
 import tensorflow as tf
 import cv2
+from rembg import remove
+import io
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
@@ -25,6 +27,28 @@ def preprocess_image_cv2(frame):
     img_array = np.array(img, dtype=np.float32) / 255.0
     return np.expand_dims(img_array, axis=0)
 
+def preprocess_image_upload(image_path):
+    # Buka gambar dengan PIL
+    img = Image.open(image_path).convert('RGB')
+
+    # Convert PIL image ke bytes
+    img_byte_arr = io.BytesIO()
+    img.save(img_byte_arr, format='PNG')
+    img_bytes = img_byte_arr.getvalue()
+
+    # Hapus background (rembg hanya terima bytes)
+    img_no_bg_bytes = remove(img_bytes)
+
+    # Convert hasilnya kembali ke PIL Image
+    img_rgb = Image.open(io.BytesIO(img_no_bg_bytes)).convert('RGB')
+
+    # Resize dan normalisasi
+    img_resized = img_rgb.resize((224, 224))
+    img_array = np.array(img_resized, dtype=np.float32) / 255.0
+    return np.expand_dims(img_array, axis=0)
+
+
+
 def predict(interpreter, input_data):
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
@@ -43,7 +67,7 @@ def index():
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
             file.save(filepath)
 
-            input_data = preprocess_image_cv2(cv2.imread(filepath))
+            input_data = preprocess_image_upload(filepath)
 
             result1 = predict(interpreter1, input_data)
             idx1 = int(np.argmax(result1))
