@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasifikasi Mangga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'bounce-subtle': 'bounce 2s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(251, 146, 60, 0.5)' },
+                            '100%': { boxShadow: '0 0 30px rgba(251, 146, 60, 0.8), 0 0 40px rgba(251, 146, 60, 0.3)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-orange-900 to-amber-900 relative overflow-x-hidden">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-32 h-32 bg-orange-400/10 rounded-full blur-xl animate-float"></div>
+        <div class="absolute top-3/4 right-1/4 w-48 h-48 bg-yellow-400/10 rounded-full blur-xl animate-float" style="animation-delay: -2s;"></div>
+        <div class="absolute top-1/2 left-3/4 w-24 h-24 bg-green-400/10 rounded-full blur-xl animate-float" style="animation-delay: -4s;"></div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8 sm:py-12 relative z-10">
+        <!-- Modern Header -->
+        <div class="text-center mb-16 animate-fade-in">
+            <!-- Hero Icon with Glow Effect -->
+            <div class="relative inline-block mb-8">
+                <div class="absolute inset-0 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full blur-xl opacity-60 animate-glow"></div>
+                <div class="relative p-6 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300">
+                    <svg class="w-12 h-12 sm:w-16 sm:h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.5,10.87 10.29,10.14C10.95,9.5 11.95,9.07 13,9.07C14.05,9.07 15.05,9.5 15.71,10.14C16.5,10.87 17,11.88 17,13A3,3 0 0,1 14,16H12M12,3L13.09,8.26L20,9L13.09,9.74L12,16L10.91,9.74L4,9L10.91,8.26L12,3Z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Modern Title with Gradient Text -->
+            <div class="space-y-4 mb-8">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight">
+                    <span class="block bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-300 bg-clip-text text-transparent animate-pulse-slow">
+                        Klasifikasi
+                    </span>
+                    <span class="block bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
+                        Mangga AI
+                    </span>
+                </h1>
+                
+                <!-- Decorative Line -->
+                <div class="flex items-center justify-center space-x-4">
+                    <div class="h-px bg-gradient-to-r from-transparent via-orange-400 to-transparent w-16 sm:w-24"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+                    <div class="h-px bg-gradient-to-r from-transparent via-orange-400 to-transparent w-16 sm:w-24"></div>
+                </div>
+            </div>
+
+            <!-- Modern Subtitle -->
+            <div class="max-w-3xl mx-auto space-y-4">
+                <p class="text-lg sm:text-xl text-orange-100/90 font-medium leading-relaxed">
+                    Teknologi AI terdepan untuk mengidentifikasi jenis mangga dengan akurasi tinggi
+                </p>
+                <p class="text-orange-200/70 text-base sm:text-lg">
+                    Upload gambar atau ambil foto langsung untuk mendapatkan klasifikasi instan
+                </p>
+            </div>
+
+            <!-- Stats or Features Pills -->
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8">
+                <div class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white text-sm font-medium">
+                    <span class="text-green-400">✓</span> Akurasi 99%
+                </div>
+                <div class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white text-sm font-medium">
+                    <span class="text-blue-400">⚡</span> Hasil Instan
+                </div>
+                <div class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white text-sm font-medium">
+                    <span class="text-purple-400">🤖</span> AI Powered
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Card with Modern Design -->
+        <div class="max-w-4xl mx-auto animate-slide-up">
+            <div class="bg-white/95 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/30 overflow-hidden relative">
+                <!-- Decorative gradient overlay -->
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-400"></div>
+                
+                <!-- Image Preview Area -->
+                <div id="imagePreview" class="hidden p-6 sm:p-8 border-b border-gray-100">
+                    <div class="text-center">
+                        <div class="relative inline-block">
+                            <img id="previewImg" class="max-w-full max-h-96 w-auto h-auto rounded-2xl shadow-xl mx-auto border-4 border-white" alt="Preview">
+                            <div class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-transparent via-transparent to-white/10 pointer-events-none"></div>
+                        </div>
+                        <button onclick="clearPreview()" class="mt-6 px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            <span class="flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"/>
+                                </svg>
+                                Hapus Gambar
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Camera Preview -->
+                <div id="cameraPreview" class="hidden p-6 sm:p-8 border-b border-gray-100">
+                    <div class="text-center">
+                        <div class="relative inline-block">
+                            <video id="cameraVideo" class="max-w-full h-auto rounded-2xl shadow-xl mx-auto border-4 border-white" autoplay playsinline></video>
+                            <div class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-transparent via-transparent to-white/10 pointer-events-none"></div>
+                        </div>
+                        <canvas id="cameraCanvas" class="hidden"></canvas>
+                        <div class="mt-6 flex flex-wrap gap-4 justify-center">
+                            <button onclick="capturePhoto()" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z"/>
+                                </svg>
+                                Ambil Foto
+                            </button>
+                            <button onclick="stopCamera()" class="px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                                </svg>
+                                Tutup Kamera
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload Form -->
+                <form method="POST" enctype="multipart/form-data" class="p-6 sm:p-8">
+                    <!-- Upload Options -->
+                    <div class="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-8">
+                        <!-- File Upload -->
+                        <div class="relative group">
+                            <label class="block w-full p-6 sm:p-8 border-2 border-dashed border-orange-300/50 rounded-3xl cursor-pointer hover:border-orange-400 transition-all duration-500 hover:bg-gradient-to-br hover:from-orange-50 hover:to-yellow-50 group-hover:scale-105 transform group-hover:shadow-lg">
+                                <div class="text-center">
+                                    <div class="w-16 h-16 mx-auto mb-4 p-4 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-2xl text-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
+                                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg sm:text-xl font-bold text-gray-700 mb-2">Upload dari File</h3>
+                                    <p class="text-gray-500 text-sm sm:text-base">Pilih gambar dari perangkat Anda</p>
+                                    <p class="text-gray-400 text-xs mt-2">JPG, PNG, atau JPEG</p>
+                                </div>
+                                <input type="file" name="image" id="fileInput" class="hidden" accept="image/*" onchange="previewFile(this)">
+                            </label>
+                        </div>
+
+                        <!-- Camera Option -->
+                        <div class="relative group">
+                            <button type="button" onclick="startCamera()" class="block w-full p-6 sm:p-8 border-2 border-dashed border-blue-300/50 rounded-3xl hover:border-blue-400 transition-all duration-500 hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50 group-hover:scale-105 transform group-hover:shadow-lg">
+                                <div class="text-center">
+                                    <div class="w-16 h-16 mx-auto mb-4 p-4 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-2xl text-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
+                                            <path d="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg sm:text-xl font-bold text-gray-700 mb-2">Buka Kamera</h3>
+                                    <p class="text-gray-500 text-sm sm:text-base">Ambil foto langsung dengan kamera</p>
+                                    <p class="text-gray-400 text-xs mt-2">Kamera depan/belakang</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" id="submitBtn" disabled class="w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500 text-white font-bold text-lg rounded-2xl hover:from-orange-600 hover:via-yellow-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-lg relative overflow-hidden">
+                            <!-- Button shine effect -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                            <span class="flex items-center justify-center relative z-10">
+                                <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                                </svg>
+                                Klasifikasi Mangga Sekarang
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Enhanced Info Cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                <div class="bg-white/80 backdrop-blur-lg rounded-3xl p-6 text-center border border-white/30 hover:bg-white/90 transition-all duration-500 transform hover:scale-105 hover:shadow-xl group">
+                    <div class="w-14 h-14 mx-auto mb-4 p-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-2xl text-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2 text-lg">Akurat</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Teknologi AI terdepan dengan tingkat akurasi hingga 99%</p>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-lg rounded-3xl p-6 text-center border border-white/30 hover:bg-white/90 transition-all duration-500 transform hover:scale-105 hover:shadow-xl group">
+                    <div class="w-14 h-14 mx-auto mb-4 p-4 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-2xl text-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                            <path d="M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2 text-lg">Cepat</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Hasil klasifikasi dalam hitungan detik dengan proses real-time</p>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-lg rounded-3xl p-6 text-center border border-white/30 hover:bg-white/90 transition-all duration-500 transform hover:scale-105 hover:shadow-xl group sm:col-span-2 lg:col-span-1">
+                    <div class="w-14 h-14 mx-auto mb-4 p-4 bg-gradient-to-r from-orange-400 to-red-500 rounded-2xl text-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                            <path d="M12,2A2,2 0 0,1 14,4C14,4.74 13.6,5.39 13,5.73V7H14A7,7 0 0,1 21,14H22A1,1 0 0,1 23,15V18A1,1 0 0,1 22,19H21V20A2,2 0 0,1 19,22H5A2,2 0 0,1 3,20V19H2A1,1 0 0,1 1,18V15A1,1 0 0,1 2,14H3A7,7 0 0,1 10,7H11V5.73C10.4,5.39 10,4.74 10,4A2,2 0 0,1 12,2M12,4A0.5,0.5 0 0,0 11.5,4.5A0.5,0.5 0 0,0 12,5A0.5,0.5 0 0,0 12.5,4.5A0.5,0.5 0 0,0 12,4M5,9V20H19V9A5,5 0 0,0 14,4H10A5,5 0 0,0 5,9Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2 text-lg">Mudah</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Interface yang sederhana dan intuitif untuk semua kalangan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStream = null;
+        
+        function previewFile(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('previewImg').src = e.target.result;
+                    document.getElementById('imagePreview').classList.remove('hidden');
+                    document.getElementById('submitBtn').disabled = false;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        
+        function clearPreview() {
+            document.getElementById('imagePreview').classList.add('hidden');
+            document.getElementById('fileInput').value = '';
+            document.getElementById('submitBtn').disabled = true;
+        }
+        
+        async function startCamera() {
+            try {
+                currentStream = await navigator.mediaDevices.getUserMedia({ 
+                    video: { 
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 },
+                        facingMode: 'environment' // Prefer back camera
+                    } 
+                });
+                
+                const video = document.getElementById('cameraVideo');
+                video.srcObject = currentStream;
+                document.getElementById('cameraPreview').classList.remove('hidden');
+                
+            } catch (err) {
+                alert('Tidak dapat mengakses kamera. Pastikan browser Anda mendukung kamera dan Anda telah memberikan izin.');
+                console.error('Camera access error:', err);
+            }
+        }
+        
+        function stopCamera() {
+            if (currentStream) {
+                currentStream.getTracks().forEach(track => track.stop());
+                currentStream = null;
+            }
+            document.getElementById('cameraPreview').classList.add('hidden');
+        }
+        
+        function capturePhoto() {
+            const video = document.getElementById('cameraVideo');
+            const canvas = document.getElementById('cameraCanvas');
+            const context = canvas.getContext('2d');
+            
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            canvas.toBlob(function(blob) {
+                const file = new File([blob], "camera-capture.jpg", { type: "image/jpeg" });
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                document.getElementById('fileInput').files = dataTransfer.files;
+                
+                // Show preview
+                const url = URL.createObjectURL(blob);
+                document.getElementById('previewImg').src = url;
+                document.getElementById('imagePreview').classList.remove('hidden');
+                document.getElementById('submitBtn').disabled = false;
+                
+                stopCamera();
+            }, 'image/jpeg', 0.8);
+        }
+        
+        // Clean up camera stream when page is unloaded
+        window.addEventListener('beforeunload', function() {
+            if (currentStream) {
+                currentStream.getTracks().forEach(track => track.stop());
+            }
+        });
+    </script>
+</body>
+</html>
